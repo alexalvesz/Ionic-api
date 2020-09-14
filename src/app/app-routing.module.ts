@@ -1,29 +1,76 @@
+// import { NgModule } from '@angular/core';
+// import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
+// const routes: Routes = [
+//   // Rota da página inicial da aplicação 
+
+//   {
+//     path: '',
+//     redirectTo: 'inicio',
+//     pathMatch: 'full'
+//   },
+
+//   // Rota da página "Inicio"
+//   {
+//     path: 'inicio',
+//     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+//   },
+//     //Rota para página sobre
+//   {
+//     path: 'sobre',
+//     loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+//   },
+//   // Rota pra listar 
+//   {
+//     path: 'usuarios',
+//     loadChildren: () => import('./users/list/list.module').then( m => m.ListPageModule)
+//   },
+
+//   // Rota para a página "e404"
+//   {
+//     path: 'e404',
+//     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+//   },
+
+//     // Rota para exibir usuário unico 
+
+//     {
+//       path: 'usuario',
+//       loadChildren: () => import('./users/user/user.module').then( m => m.UserPageModule)
+//     }
+
+//   //Rota para rotas inexsistentes - Deve ser sempre a última rota
+//   {
+//     path: '**',
+//     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+//   },
+  
+  
+// ];
+// @NgModule({
+//   imports: [
+//     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+//   ],
+//   exports: [RouterModule]
+// })
+// export class AppRoutingModule {}
+
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // Rota da página inicial da aplicação 
-
+  // Rota da página inicial da aplicação
   {
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'
   },
 
-  // Rota da página "Inicio"
+  // Rota da página "inicio"
   {
     path: 'inicio',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
-    //Rota para página sobre
-  {
-    path: 'sobre',
-    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
-  },
-  // Rota pra listar 
-  {
-    path:'usuario',
-    loadChildren: () => import('./users/list/list.module').then( m => m.ListPageModule)
   },
 
   // Rota para a página "e404"
@@ -31,14 +78,33 @@ const routes: Routes = [
     path: 'e404',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   },
-  //Rota para rotas inexsistentes - Deve ser sempre a última rota
 
+  // Rota para a página "sobre"
+  {
+    path: 'sobre',
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+  },
+
+  // Rota para listar todos os usuários
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./users/list/list.module').then( m => m.ListPageModule)
+  },
+
+  // Rota para exibir usuário único
+  {
+    path: 'usuario/:id',
+    loadChildren: () => import('./users/user/user.module').then( m => m.UserPageModule)
+  },
+
+  // Rota para rotas inexistentes - DEVE SER SEMPRE A ÚLTIMA ROTA
   {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   }
-  
+
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
