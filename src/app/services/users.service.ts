@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 
+
 // Importar as bibliotecas assincronas do Angualar.abs
 import { Observable } from 'rxjs';
+
+
 
 // Importar as bibliotecas HTTP 
 import { HttpClient } from '@angular/common/http';
@@ -24,5 +27,8 @@ export class UsersService {
       return this.http.get(this.apiurl);
     }
 
-
+// Método para listar um usuario especifico pelo Id
+getUser(id:string): Observable<any> {
+  return this.http.get('${this.apiurl}?id=${id}');
+}
 }
