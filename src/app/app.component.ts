@@ -17,6 +17,11 @@ export class AppComponent implements OnInit {
       url: '/inicio',
       icon: 'home'
     },
+    {
+      title: 'Listar usuários',
+      url: '/usuarios',
+      icon: 'people'
+    },
 
     {
       title: 'Sobre',

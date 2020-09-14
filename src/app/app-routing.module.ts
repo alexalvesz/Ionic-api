@@ -20,9 +20,13 @@ const routes: Routes = [
     path: 'sobre',
     loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
   },
+  // Rota pra listar 
+  {
+    path:'usuario',
+    loadChildren: () => import('./users/list/list.module').then( m => m.ListPageModule)
+  },
 
   // Rota para a página "e404"
-
   {
     path: 'e404',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
@@ -33,6 +37,7 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   }
+  
 ];
 @NgModule({
   imports: [
