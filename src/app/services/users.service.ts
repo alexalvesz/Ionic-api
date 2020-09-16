@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class UsersService {
 
   // URL "base" da API
-  private apiurl = 'http://localhost:8888/api';
+  private apiUrl = 'http://localhost:8888/api';
 
   constructor(
     private http: HttpClient
@@ -22,13 +22,20 @@ export class UsersService {
   getUsers(): Observable<any> {
 
     // Faz o GET na API
-    return this.http.get(this.apiurl);
+    return this.http.get(this.apiUrl);
   }
 
   // Método para listar um usuário específico pelo Id
   getUser(id: string): Observable<any> {
 
     // Consulta à API no formato "http://localhost:8888/api?id={id}"
-    return this.http.get(`${this.apiurl}?id=${id}`);
+    return this.http.get(`${this.apiUrl}?id=${id}`);
+  }
+
+  // Método para apagar um usuário específico
+  deleteUser(id: string): Observable<any> {
+
+    // Apaga os dados na API
+    return this.http.delete(`${this.apiUrl}?id=${id}`);
   }
 }
