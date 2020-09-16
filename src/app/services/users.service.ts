@@ -1,16 +1,9 @@
 import { Injectable } from '@angular/core';
 
-<<<<<<< HEAD
 // Importar as bilbiotecas assíncronas do Angular
 import { Observable } from 'rxjs';
 
 // Importar as bilbiotecas HTTP
-=======
-// Importar as bibliotecas assincronas do Angualar.abs
-import { Observable } from 'rxjs';
-
-// Importar as bibliotecas HTTP 
->>>>>>> parent of 086b358... aula07
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -24,7 +17,6 @@ export class UsersService {
   constructor(
     private http: HttpClient
   ) { }
-<<<<<<< HEAD
 
   // Método para obter todos os usuários da API
   getUsers(): Observable<any> {
@@ -40,14 +32,3 @@ export class UsersService {
     return this.http.get(`${this.apiurl}?id=${id}`);
   }
 }
-=======
-  //Método para obter todos os usuários da API
-    getUsers(): Observable<any> {
-      
-      // Faz o GET na API
-      return this.http.get(this.apiurl);
-    }
-
-
-}
->>>>>>> parent of 086b358... aula07
