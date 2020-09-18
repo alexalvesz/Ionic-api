@@ -43,7 +43,12 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+  },
+  {
+    path: 'novo',
+    loadChildren: () => import('./users/create/create.module').then( m => m.CreatePageModule)
   }
+
 
 ];
 

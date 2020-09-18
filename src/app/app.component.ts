@@ -19,10 +19,14 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Listar usuários',
-      url: '/usuarios',
+      url: '/usuarios/todos',
       icon: 'people'
     },
-
+    {
+      title: 'Cadastrar usuário',
+      url: '/novo',
+      icon: 'person-add'
+    },
     {
       title: 'Sobre',
       url: '/sobre',
