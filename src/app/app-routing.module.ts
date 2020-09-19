@@ -38,18 +38,19 @@ const routes: Routes = [
     path: 'usuario/:id',
     loadChildren: () => import('./users/user/user.module').then( m => m.UserPageModule)
   },
-
+  {
+    path: 'novo',
+    loadChildren: () => import('./users/create/create.module').then( m => m.CreatePageModule)
+  },
+   {
+    path: 'novo',
+    loadChildren: () => import('./users/create/create.module').then( m => m.CreatePageModule)
+  },
   // Rota para rotas inexistentes - DEVE SER SEMPRE A ÚLTIMA ROTA
   {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
-  },
-  {
-    path: 'novo',
-    loadChildren: () => import('./users/create/create.module').then( m => m.CreatePageModule)
   }
-
-
 ];
 
 @NgModule({
