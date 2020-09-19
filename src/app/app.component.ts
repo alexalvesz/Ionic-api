@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
       icon: 'information-circle'
     }
   ];
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
