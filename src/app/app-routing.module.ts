@@ -42,9 +42,9 @@ const routes: Routes = [
     path: 'novo',
     loadChildren: () => import('./users/create/create.module').then( m => m.CreatePageModule)
   },
-   {
-    path: 'novo',
-    loadChildren: () => import('./users/create/create.module').then( m => m.CreatePageModule)
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   // Rota para rotas inexistentes - DEVE SER SEMPRE A ÚLTIMA ROTA
   {
