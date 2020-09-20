@@ -68,4 +68,44 @@ export class UserPage implements OnInit {
       }
     });
   }
+
+  // Ação do botão apagar
+  delUser(id: string, name: string) {
+
+    // Pedir confirmação
+    if (!confirm(
+      `Tem certeza que deseja apagar "${name}"?\n
+    Esta ação é irrersível!\n
+Clique em [Ok] para apagar ou em [Cancelar] para não apagar...`
+    )) {
+
+      // Sair sem fazer nada
+      return false;
+    }
+
+    // Apagar o registro
+    this.usersService.deleteUser(this.id.toString()).subscribe((res: any) => {
+
+      // Se apagou
+      if (res.status === 'success' && res.result === 'Record deleted successfully') {
+
+        // Feeback
+        alert(`Usuário apagado com sucesso!\n\nClique em [Ok] para continuar...`);
+
+        // Retorna para a listagem de usuários
+        this.navController.navigateForward('/usuarios/' + this.genString(7));
+      }
+    });
+  }
+
+  // Gerador de caracteres aleatórios
+  genString(len: number) {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz';
+    let rnd = '';
+    for (let i = 0; i < len; i++) {
+      const rnum = Math.floor(Math.random() * letters.length);
+      rnd += letters.substring(rnum, rnum + 1);
+    }
+    return rnd;
+  }
 }
