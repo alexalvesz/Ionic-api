@@ -28,6 +28,11 @@ export class AppComponent implements OnInit {
       icon: 'person-add'
     },
     {
+  title: 'Login',
+  url: '/login',
+  icon: 'person'
+},
+    {
       title: 'Sobre',
       url: '/sobre',
       icon: 'information-circle'
