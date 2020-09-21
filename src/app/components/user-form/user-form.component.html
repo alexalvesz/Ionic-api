@@ -1,6 +1,10 @@
 <div>
-  <p class="ion-margin">
+  <p class="ion-margin" *ngIf="!userForm.controls.id.value">
     Preencha os campos abaixo com atenção para cadastrar um novo usuário.
+  </p>
+
+  <p class="ion-margin" *ngIf="userForm.controls.id.value">
+    Preencha os campos abaixo com atenção para editar o usuário.
   </p>
 
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
@@ -68,7 +72,8 @@
     </ion-list>
 
     <ion-button type="submit" expand="block" class="ion-margin" [disabled]="userForm.invalid">
-      Cadastrar usuário
+      <span *ngIf="!userForm.controls.id.value">Cadastrar novo usuário</span>
+      <span *ngIf="userForm.controls.id.value">Salvar usuário</span>
     </ion-button>
 
   </form>
