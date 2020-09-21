@@ -36,7 +36,13 @@ export class AppComponent implements OnInit {
       title: 'Sobre',
       url: '/sobre',
       icon: 'information-circle'
+    },
+    {
+      title: 'Editar',
+      url: '/editar/:id',
+      icon: 'information-circle'
     }
+
   ];
 
   constructor(

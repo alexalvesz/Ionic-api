@@ -38,6 +38,7 @@ const routes: Routes = [
     path: 'usuario/:id',
     loadChildren: () => import('./users/user/user.module').then( m => m.UserPageModule)
   },
+  // Rota para cadastrar usuário 
   {
     path: 'novo',
     loadChildren: () => import('./users/create/create.module').then( m => m.CreatePageModule)
@@ -46,6 +47,13 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+
+  //Rota para editar usuário 
+  {
+    path: 'editar/:id',
+    loadChildren: () => import('./pages/edit/edit.module').then( m => m.EditPageModule)
+  },
+
   // Rota para rotas inexistentes - DEVE SER SEMPRE A ÚLTIMA ROTA
   {
     path: '**',
